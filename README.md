@@ -15,12 +15,6 @@ Here are some of the key skills I bring to the table:
 ## 🌱 Currently Exploring: Web Development
 I'm currently deep-diving into web development—learning how to create dynamic, responsive websites and web applications. From mastering front-end frameworks to understanding backend logic, I'm exploring the full stack of possibilities. Every day is a new challenge, and I'm excited to build engaging digital experiences.
 
-## 📂 Featured Projects
-Here are some of the projects I’m most proud of:
-- **Project Name** - Brief description + link to GitHub/demo
-- **Project Name** - Brief description + link to GitHub/demo
-- **Project Name** - Brief description + link to GitHub/demo
-
 ## 📫 How to Reach Me
 Feel free to connect with me!
 - LinkedIn: [https://www.linkedin.com/in/premnath-sundarrajan ]
