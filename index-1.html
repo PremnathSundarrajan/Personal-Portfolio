@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premnath's Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+      
+}
+
+
+#background-tree {
+    position: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width:100%; 
+    height:100%;
+    z-index: -200;
+    /* Ensures the image stays behind other content */
+}
+#particles-js{
+    z-index: -10;
+    position:  fixed;
+}
+#white-background {
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height:100%;
+    z-index: -200;
+     /* Ensures the image stays behind other content */
+}
+
+
+#black{
+    position:fixed;
+    z-index: -100;
+    opacity: 0.3;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly */
+    align-items: center; /* Aligns items vertically */
+    padding: 10px; /* Adjust as needed for spacing */
+    z-index: 100; /* Ensures the navigation bar stays above the background */
+}
+
+#navigation-left{
+    color: white;
+}
+
+#navigation-right .text {
+    padding: 10px;
+    display: inline-block;
+    color: white; /* Ensures consistent spacing */
+}
+
+#navigation-right .text:hover{
+    text-decoration: underline;
+    color: #007786;
+}
+
+#My-profile-img{
+    margin-top:300px;
+    margin-bottom: 300px;
+    position: relative;
+    z-index: 1;
+
+    
+}    
+#my-picture{
+    width: 200px; 
+    height: 200px; 
+    border-radius: 100%;
+    border: solid white;
+    z-index: 1;
+    
+} 
+
+#about-me{
+    text-align: center;
+    color: white;
+}
+
+.about { 
+    display: inline-block; 
+    width: 300px; /* Adjust width as needed */ height: 40px; /* Adjust height as needed */ overflow: hidden; 
+    white-space: nowrap; 
+}
+
+.fa-bars{
+    display:none;
+}
+
+.small-text{
+    text-align:center;
+    padding: 20px;
+}
+
+#small-nav{
+    height: fit-content;
+    width:fit-content;
+    display: flex;
+    position:absolute;
+    top: 0;
+    left: -60%;
+    background-color:#909090;
+    padding:20px;
+    border-radius: 5px;
+    transition: ease 1s;
+    z-index: 10;
+
+}
+
+#small-navigation-right{
+    color:white;
+}
+
+#cancel{
+    text-align: right;
+}
+
+.small-text:hover{
+    text-decoration: underline;
+}
+
+@media (max-width:650px){
+    #navigation-right{
+        display:none;
+    }
+    .fa-bars{
+        display: block;
+    }
+    
+}
+
+#About-me-skills{
+    text-align: center;
+    padding:20px;
+    padding-top: 100px;
+    background-color: white;
+    z-index: 100;
+    color: black;
+    margin: 0;
+    padding-bottom: 100px;
+}
+
+.skill-progress{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.skill{
+    padding:5px;
+    text-align: left;
+    font-weight:bold;
+    margin: 5px;
+
+}
+
+.progress-bar{
+    width: 100%;
+    overflow: hidden;
+    background-color: #909090;
+    
+}
+
+.progress{
+    width: 0;
+    height: 5px;
+    position: relative;
+    background:linear-gradient(to right, #4169e1, #89CFF0);
+    transition: width 1s ease-in-out;
+}
+
+.progress-value { position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #ffffff; 
+    font-size: 5px; 
+}
+
+.skill-text{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:900px){
+    .skill-progress{
+        grid-template-columns: 1fr;
+    }
+}
+
+#Myservices {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    display: grid;
+    margin-top: 100px;
+}
+
+#Making-service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.services {
+    backdrop-filter: blur(25px);
+    padding: 20px;
+    color: white;
+    margin: 10px;
+    border: solid white 1px;
+    /* Transition for icon color */
+    transition: background 0.5s ease-in-out, color 0.3s ease-in-out; /* Transition for background and color */
+}
+
+.services .fa-code,
+.services .fa-hackerrank {
+    transition: color 0.3s ease; /* Transition for icon color */
+  
+}
+.services:hover {
+    color: white;
+    background: linear-gradient(to top,#4169e1, #89CFF0 ); /* Background image on hover */
+}
+
+.services:hover .fa-code,
+.services:hover .fa-hackerrank {
+    color: white; /* Change icon color to white on hover */
+}
+
+@media (max-width:700px){
+    #Making-service-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+#Portfolio{
+    background-color: white;
+    text-align: center;
+    padding-top: 100px;
+    margin-top: 80px;
+    padding-bottom: 100px;
+}
+
+.portfolio-web-one{
+    display: grid;
+
+}
+
+.portfolio-web-one img{
+    width: 300px;
+    height: 250px;
+}
+
+.portfolio-web-two img{
+    width: 300px;
+    height: 250px;
+}
+
+#Education{
+
+    margin-top: 80px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#education-life{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+#school{
+    backdrop-filter: blur(30px);
+    margin: 20px;
+    padding: 20px;
+    border: solid 1px white;
+}
+
+#college{
+    margin: 20px;
+    padding: 20px;
+    border: solid 1px white;
+    backdrop-filter: blur(30px);
+}
+
+@media (max-width:700px){
+    #education-life{
+        grid-template-columns: 1fr;
+    }
+}
+
+#Contact-me{
+    background-color: white;
+    padding-top: 100px;
+    margin-top: 80px;
+    padding-bottom: 100px;
+    margin: 0;
+}
+
+#Making-contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+form{
+    margin: 20px;
+    margin-left: 10px;
+}
+
+form input{
+    padding: 10px;
+    border:solid 1px #909090;
+    border-radius: 5px;
+    width: 90%;
+    margin: 8px;
+}
+
+form textarea{
+    padding: 10px;
+    border:solid 1px #909090;
+    border-radius: 5px;
+    width: 90%;
+    margin: 8px;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+form button{
+    padding: 10px;
+    margin: 8px;
+    background-color: #007786;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: 0.5s ease;
+}
+
+form button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#My-information{
+    margin: 20px;
+    
+}
+
+#My-information h4{
+    background-color: #F5F5F5; 
+    padding: 5px; 
+    margin: 15px; 
+    border-radius: 5px; 
+    width: 90%;
+}
+
+@media (max-width:700px){
+    #Making-contact-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+footer{
+    margin: 0;
+    background-color: #121212;
+    padding: 30px;
+    text-align: center;
+}
+
+#social-footer{
+    text-align: center;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+#social-footer i {
+    padding: 30px;
+    font-size: 30px;
+    color: #ffffff;
+    opacity: 0.5; /* Initial opacity */
+    transition: opacity 0.5s ease, color 0.5s ease; /* Transition for both opacity and color */
+}
+
+#social-footer i:hover {
+    color: #007786; /* Hover color */
+    opacity: 1; /* Fade to full opacity */
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <img id="black" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-black-solid-color-background.jpg" alt="black">
+    <img id="background-tree" src="https://w0.peakpx.com/wallpaper/25/26/HD-wallpaper-black-and-white-graphy-of-trees-on-a-foggy-day.jpg" alt="">
+
+    <nav data-aos="fade-up">
+        <div class="navigation">
+            <div id="navigation-left">
+                <h2>Premnath</h2>
+            </div>
+            <div id="navigation-right">
+                <p class="text" id="home">Home</p>
+                <p class="text" id="about-nav">About</p>
+                <p class="text" id="Portfolio-nav">Portfolio</p>
+                <p class="text" id="contact">Contact</p>
+                
+               
+            </div> 
+
+            <i class="fa-solid fa-bars" onclick="slideNav()"></i>
+        </div>
+
+        <div id="small-nav">
+            <div id="small-navigation-right">
+                <p id="cancel" onclick="cancelslideNav()"><i class="fa-solid fa-xmark"></i></p>
+                <p class="small-text" id="home-side">Home</p>
+                <p class="small-text" id="about-nav-side">About</p>
+                <p class="small-text" id="Portfolio-nav-side">Portfolio</p>
+                <p class="small-text" id="contact-side">Contact</p>
+                
+            </div> 
+
+
+        </div>
+    </nav>
+    
+    <section id="My-profile-img" data-aos="fade-up" data-aos-duration="1500">
+        <center>
+            <img id="my-picture" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fprofile-icon&psig=AOvVaw3ZrCf9evE6gWW13hni93UQ&ust=1743612639666000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPja5Lmlt4wDFQAAAAAdAAAAABAX" alt="Premnath">
+        </center>    
+        <div id="about-me">
+            <h1 style="font-size: 40px;">Hi!, I am Premnath </h1>
+            <p style="font-size: 25px;"><span class="about"></span></p>    
+        </div>
+
+  
+    </section>
+    
+    <section id="About-me-skills" >
+        <p style="color: #007786;" data-aos="fade-right" >About me</p>
+        <h1 style="font-size: 35px;" data-aos="fade-right" >Welcome To My Site</h1>
+        <p style="color: #888888; padding-top: 20px;" data-aos="fade-right" >I'm a Computer Science and Engineering student, studying in Chennai Institute Of Technology. I am developing my skills in web developing, I love to design web page. I am mastering my developing skills. I am bit good in front end and learning back-end.</p>
+        <div class="skill-progress">
+            <div class="skill">
+                <div class="skill-text">
+                    <h4>HTML</h4>
+                    <h4>90%</h4>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" data-progress="90">                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-text">
+                    <h4>CSS</h4>
+                    <h4>60%</h4>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress" data-progress="60">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-text">
+                    <h4>Javascript</h4>
+                    <h4>50%</h4>
+                </div>
+                                
+                <div class="progress-bar">
+                    <div class="progress" data-progress="50"> </div>
+                </div>
+            </div>                        
+        </div>
+    </section>
+    <section id="Myservices">
+        <h4 style="color: #007786;" data-aos="fade-right">My Services</h4>
+        <h1 style="color: white; font-size: 40px; margin: 50px;" data-aos="fade-right" >I'm available for help</h1>
+        <div id="Making-service-grid">
+            <div class="services" id="services-code">
+                <h4  id="coder"><i class="fa-solid fa-code" style="color: #007786;"></i></h4>
+                <h4>Contact me if any help need to develop website. I will do my best and share some ideas and I hope I will learn some new things if we work together</h4>
+            </div>
+            <div class="services" id="services-hack">
+               <h4><i class="fa-brands fa-hackerrank" style="color: #007786;"></i></h4>
+                <h4>If any member required to join in hackathon, I'm always available</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="Portfolio">
+        <h4 style="color: #007786;" data-aos="fade-right">Portfolio</h4>
+        <h1 style="font-size: 40px; margin: 50px;" data-aos="fade-right">I Love What I Do</h1>
+        <p style="color: #888888;" data-aos="fade-right">Websites</p>
+        <div class="portfolio-web-one">
+            <center>
+                <img src="https://templatesjungle.com/wp-content/uploads/2022/03/Travelix-%E2%80%93-Free-Bootstrap-4-HTML5-Travel-Agency-Website-Template-1024x768.jpg" alt="website one" id="web-portfolio-1" style="height: 260px; width: 310px;">
+                <img src="https://atozwebtechnology.com/wp-content/uploads/2020/08/Static-Website-1.png" alt="website two" id="web-portfolio-2">
+            </center>
+
+        </div>
+
+        <div class="portfolio-web-two">
+            <center>
+                <img src="https://goradii.com/wp-content/uploads/2012/03/cwd30.jpg" alt="website three" id="web-portfolio-3">
+                <img src="https://htmlburger.com/blog/wp-content/uploads/2023/04/modern-website-design-examples.jpg" alt="website four" id="web-portfolio-4"> 
+            </center>
+        </div>
+    </section>
+    <section id="Education">
+        <center>
+            <h4 style="color: #007786;" data-aos="fade-right">My carrer</h4>
+            <h1 style="font-size: 40px; color: white;" data-aos="fade-right">Education</h1>
+        </center>
+        <div id="education-life">
+            <div id="school">
+                <h4 style="color:white; border: solid #007786; width: fit-content; padding: 10px;">2017 - 2024</h4>
+                <h3 style="color: white;">Higher Standard,  Isha Vidhya Ramaniyam Matriculation School</h3>
+                <p style="padding-top: 20px; color: #888888;">Completed my grades from 5th standard to 12th standard in Isha Vidhya School</p>
+            </div>
+            <div id="college">
+                <h4 style="color: white; border: solid #007786; width: fit-content; padding: 10px;">2024 - now</h4>
+                <h3 style="color: white;">Computer Science And Engineering, Chennai Institute Of Technology</h3>
+                <p style="padding-top: 20px; color: #888888;">Completing My B.E degree in Chennai Institute Of Technology with lot of projects</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Contact-me">
+        <center>
+            <h4 style="color: #007786;"  data-aos="fade-right">Have a Question?</h4>
+        <h1 style="color:black; font-size: 40px;"  data-aos="fade-right">Contact Me Now</h1>
+        </center>
+        
+        <div id="Making-contact-grid">
+            
+            <form action="/submit" method="post">
+                <input type="text"  id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button  id="subButton" type="submit">Submit</button>
+            </form>
+            <div id="My-information" >
+                <h4><i class="fa-solid fa-location-dot" style="color: #007786; padding: 5px;"></i> Nangavalli, Salem, Tamilnadu</h4>
+                <h4><i class="fa-solid fa-phone" style="color: #007786; padding: 5px;"></i> 9566794604</h4>
+                <h4><i class="fa-solid fa-envelope" style="color: #007786; padding: 5px;"></i>premsundarrajan4@gmail.com</h4>
+                <h4><i class="fa-solid fa-download" style="color: #007786; padding: 5px;"></i> Download Resume</h4>
+            </div>
+        </div>
+        
+       
+
+    </section>
+    
+    <footer>
+        <div id="social-footer">
+            <a href="https://www.instagram.com/premnathsundarrajan/"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
+            <a href="https://www.linkedin.com/in/premnath-sundarrajan-274809333/"><i class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a>
+            <a href="mailto:premsundarrajan4@gmail.com"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></a>
+        </div>
+        <p style="color: white;">&copy; Copyright - Built by Premnath</p>
+    </footer>
+    
+
+        
+    </script>
+    <script src="script-1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+</body>
+</html>
