@@ -7,10 +7,9 @@ Hello! I'm Premnath, a web development enthusiast, driven by curiosity and creat
 
 ## 🔥 Skills & Expertise
 Here are some of the key skills I bring to the table:
-- **Programming:** HTML, CSS, JavaScript
-- **Frameworks & Tools:** React, Node.js, Bootstrap
+- **Programming:** HTML, CSS, JavaScript,C,C++
+- **Frameworks & Tools:** Express.js
 - **Soft Skills:** Adaptability, problem-solving, creativity
-- **Other Specializations:** UI/UX design, responsive web design, API integration
 
 ## 🌱 Currently Exploring: Web Development
 I'm currently deep-diving into web development—learning how to create dynamic, responsive websites and web applications. From mastering front-end frameworks to understanding backend logic, I'm exploring the full stack of possibilities. Every day is a new challenge, and I'm excited to build engaging digital experiences.
