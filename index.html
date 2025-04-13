@@ -319,6 +319,11 @@
 
 
 
+#Making-contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 form{
     margin: 20px;
     margin-left: 10px;
@@ -367,7 +372,7 @@ form button:hover{
     padding: 5px; 
     margin: 15px; 
     border-radius: 5px; 
-    width: 40%;
+    width: 90%;
 }
 
 @media (max-width:700px){
@@ -557,7 +562,13 @@ footer{
         </center>
         <center>
         <div id="Making-contact-grid">
-            
+             <form action="/submit" method="post">
+                <input type="text"  id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button  id="subButton" type="submit">Submit</button>
+            </form>
           
             <div id="My-information" >
                 <h4><i class="fa-solid fa-location-dot" style="color: #007786; padding: 5px;"></i> Nangavalli, Salem, Tamilnadu</h4>
